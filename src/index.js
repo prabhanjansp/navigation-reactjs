@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import {
+  BrowserRouter,
+  HashRouter,
+  unstable_HistoryRouter,
+  MemoryRouter,
+  StaticRouter,
+} from "react-router-dom";
+// "react-router-dom/server";
+//actually browser router is react context
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    {/* <HashRouter>
+      <App />
+    </HashRouter> */}
+    {/* <MemoryRouter>
+      <App />
+    </MemoryRouter> */}
+    {/* <StaticRouter location="/">
+          <App />
+    </StaticRouter> */}
+    {/* render home page */}
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// history navigation is unstable
+// Memory router it actually stores everything related to where you have been in history inside  memory
+//static router helps you to find the exact router pages ,it helps for testing purpose
